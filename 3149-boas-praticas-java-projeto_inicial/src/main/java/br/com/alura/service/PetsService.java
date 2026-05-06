@@ -3,10 +3,6 @@ package br.com.alura.service;
 import br.com.alura.client.ClientHttpConfiguration;
 import br.com.alura.domain.Pet;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -44,7 +40,7 @@ public class PetsService {
         for (Pet pet : petList) {
             long id = pet.getId();
             String tipo = pet.getTipo();
-            String nome = pet.getTipo();
+            String nome = pet.getNome();
             String raca = pet.getRaca();
             int idade = pet.getIdade();
             System.out.println(id + " - " + tipo + " - " + nome + " - " + raca + " - " + idade + " ano(s)");
