@@ -36,6 +36,15 @@ public class PetsService {
         Pet[] pets = objectMapper.readValue(responseBody, Pet[].class);
         List<Pet> petList = Arrays.stream(pets).toList();
 
+        if (petList.isEmpty()) {
+            System.out.println("Não há pets cadastrados!");
+            return;
+        }
+
+        mostrarPets(petList);
+    }
+
+    private void mostrarPets(List<Pet> petList) {
         System.out.println("Pets cadastrados:");
         for (Pet pet : petList) {
             long id = pet.getId();
